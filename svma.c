@@ -85,13 +85,110 @@ int main(int argc,char** argv){
 				}else if(dee=='H'&&def=='L'&&deg=='T'){
 					ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
 					pf->hascode = 1;
-					pf->bytecode = 0;
+					pf->bytecode = 0x00;
 				}else if(dee=='L'&&def=='M'&&deg=='A'){
 					ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
                                         pf->hascode = 1;
-                                        pf->bytecode = 1;
+                                        pf->bytecode = 0x01;
 					readFunName(0);
-				}else if(dee=='V'&&def=='A'&&deg=='R'){
+				}else if(dee=='L'&&def=='A'&&deg=='M'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x02;
+                                        readFunName(0);
+                                }else if(dee=='A'&&def=='D'&&deg=='D'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x03;
+                                        readFunName(0);
+                                }else if(dee=='D'&&def=='I'&&deg=='S'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x04;
+                                        readFunName(0);
+                                }else if(dee=='M'&&def=='U'&&deg=='L'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x05;
+                                        readFunName(0);
+                                }else if(dee=='D'&&def=='I'&&deg=='V'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x06;
+                                        readFunName(0);
+                                }else if(dee=='C'&&def=='M'&&deg=='P'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x07;
+                                        readFunName(0);
+                                }else if(dee=='J'&&def=='E'&&deg=='Q'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x08;
+                                        readFunName(0);
+                                }else if(dee=='Q'&&def=='N'&&deg=='E'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x09;
+                                        readFunName(0);
+                                }else if(dee=='J'&&def=='M'&&deg=='O'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x0A;
+                                        readFunName(0);
+                                }else if(dee=='J'&&def=='N'&&deg=='M'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x0B;
+                                        readFunName(0);
+                                }else if(dee=='J'&&def=='L'&&deg=='E'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x0C;
+                                        readFunName(0);
+                                }else if(dee=='J'&&def=='N'&&deg=='L'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x0D;
+                                        readFunName(0);
+                                }else if(dee=='J'&&def=='M'&&deg=='P'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x0E;
+                                        readFunName(0);
+                                }else if(dee=='C'&&def=='A'&&deg=='L'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x0F;
+                                        readFunName(0);
+                                }else if(dee=='R'&&def=='E'&&deg=='T'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x10;
+                                }else if(dee=='L'&&def=='E'&&deg=='F'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x11;
+                                }else if(dee=='R'&&def=='I'&&deg=='G'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x12;
+                                }else if(dee=='A'&&def=='N'&&deg=='D'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x13;
+                                        readFunName(0);
+                                }else if(dee=='O'&&def=='R'&&deg=='M'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x14;
+                                        readFunName(0);
+                                }else if(dee=='S'&&def=='Y'&&deg=='S'){
+                                        ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = 0x15;
+                                        readFunName(0);
+                                }else if(dee=='V'&&def=='A'&&deg=='R'){
                                         readFunName(1);
                                 }else{
 					printf("PANIC: unknown opcode %c%c%c \n",dee,def,deg);
