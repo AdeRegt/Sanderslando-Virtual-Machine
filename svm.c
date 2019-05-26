@@ -128,7 +128,7 @@ int main(int argc,char** argv){
 			//
 
 			unsigned short location = getNextWord();
-			register_A += getMemoryByte(location);
+			register_A += getMemory(location);
 		}else if(opcode==0x04){
 			//
 			// Distract value of memorylocation to registerA
@@ -137,7 +137,7 @@ int main(int argc,char** argv){
 			//
 
 			unsigned short location = getNextWord();
-                        register_A -= getMemoryByte(location);
+                        register_A -= getMemory(location);
 		}else if(opcode==0x05){
                         //
                         // Multiply value of memorylocation to registerA
@@ -146,7 +146,7 @@ int main(int argc,char** argv){
                         //
 
                         unsigned short location = getNextWord();
-                        register_A *= getMemoryByte(location);
+                        register_A *= getMemory(location);
                 }else if(opcode==0x06){
                         //
                         // Divide value of memorylocation to registerA
@@ -155,7 +155,7 @@ int main(int argc,char** argv){
                         //
 
                         unsigned short location = getNextWord();
-                        register_A /= getMemoryByte(location);
+                        register_A /= getMemory(location);
                 }else if(opcode==0x07){
 			//
 			// Compare register A with memory
@@ -164,7 +164,7 @@ int main(int argc,char** argv){
 			//
 
 			unsigned short location = getNextWord();
-			unsigned char valueA = getMemoryByte(location);
+			unsigned char valueA = getMemory(location);
 			if(valueA==register_A){
 				cmpbyte = 1;
 			}else if(valueA<register_A){
