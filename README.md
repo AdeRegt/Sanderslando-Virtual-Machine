@@ -1,6 +1,7 @@
 # Sanderslando-Virtual-Machine
 ## Internals
 ### Instructionset
+visible
 ```
 machinestatus
 0x00 HLT _ END OF CODE
@@ -33,8 +34,28 @@ binairy
 0x13 AND M AND TO MEMORYLOCATION
 0x14 ORM M OR TO MEMORYLOCATION
 
-operatingsstem
+operatingsystem
 0x15 SYS M PREFORM SYSTEMCALL WITH STRUCT
+```
+invisible
+```
+VAR defines varabele
+REM defines a comment
+DAT write raw data
+```
+operatingsystem calls
+```
+code: 0
+args: none
+exp: exit
+
+code: 1
+args: width,height,value,color
+exp: prints value at x,y with color and value.
+
+code: 2
+args: none
+exp: waits for keypress and returns its value in registerA
 ```
 
 ### Assambler
