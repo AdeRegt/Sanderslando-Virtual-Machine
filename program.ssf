@@ -1,4 +1,10 @@
-HLT
 LMA@voorbeeld
-HLT
+SYS@diagnostics
 VAR@voorbeeld
+DAT#AB
+VAR@diagnostics
+DAT#01
+DAT#01
+DAT#01
+DAT#00
+DAT#30

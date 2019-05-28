@@ -42,6 +42,53 @@ void readFunName(unsigned char isfunc){
 	}
 }
 
+unsigned char getNibble(unsigned char A){
+	if(A=='0'){
+		return 0x00;
+	}else if(A=='1'){
+		return 0x01;
+	}else if(A=='2'){
+		return 0x02;
+	}else if(A=='3'){
+		return 0x03;
+	}else if(A=='4'){
+		return 0x04;
+	}else if(A=='5'){
+		return 0x05;
+	}else if(A=='6'){
+		return 0x06;
+	}else if(A=='7'){
+		return 0x07;
+	}else if(A=='8'){
+		return 0x08;
+	}else if(A=='9'){
+		return 0x09;
+	}else if(A=='A'){
+		return 0x0A;
+	}else if(A=='B'){
+		return 0x0B;
+	}else if(A=='C'){
+		return 0x0C;
+	}else if(A=='D'){
+		return 0x0D;
+	}else if(A=='E'){
+		return 0x0E;
+	}else if(A=='F'){
+		return 0x0F;
+	}else{
+		printf("Syntax error");
+		exit(1);
+	}
+}
+
+unsigned char readRaw(){
+	unsigned char A = fgetc(file);
+	unsigned char B = fgetc(file);
+	unsigned char C = 0x00;
+	C = (getNibble(A)<<4) | getNibble(B);
+	return C;
+}
+
 int main(int argc,char** argv){
 	if(argc==3){
 		inputfilename = argv[1];
@@ -190,7 +237,15 @@ int main(int argc,char** argv){
                                         readFunName(0);
                                 }else if(dee=='V'&&def=='A'&&deg=='R'){
                                         readFunName(1);
-                                }else{
+                                }else if(dee=='D'&&def=='A'&&deg=='T'){
+					if(fgetc(file)!='#'){
+						printf("Syntax error, expected # \n");
+						exit(1);
+					}
+					ProgramFraction *pf = (ProgramFraction *)&program[codepointer++];
+                                        pf->hascode = 1;
+                                        pf->bytecode = readRaw();
+				}else{
 					printf("PANIC: unknown opcode %c%c%c \n",dee,def,deg);
 					exit(1);
 				}

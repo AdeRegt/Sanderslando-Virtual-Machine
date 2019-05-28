@@ -57,7 +57,7 @@ unsigned char getNextByte(){
 unsigned short getNextWord(){
 	unsigned long A = getNextByte();
 	unsigned long B = getNextByte();
-	return (B << 8) | A;
+	return (A << 8) | B;
 }
 
 void setMemoryByte(unsigned short location,unsigned char value){
@@ -332,7 +332,22 @@ int main(int argc,char** argv){
 			// 0x15 LOCATION
 			//
 			unsigned short loc = getNextWord();
-			panic("SYSTEMCALL");
+			unsigned char opcode2 = getMemory(loc);
+			if(opcode2==0x00){
+				printf(">>System exits<<\n");
+				exit(RET_EXIT);
+			}else if(opcode2==0x01){
+				unsigned char width = getMemory(loc+1);
+				unsigned char height = getMemory(loc+2);
+				unsigned char value = getMemory(loc+3);
+				unsigned char color = getMemory(loc+4);
+				printf("\033[%d;%dH", width, height);
+				printf("\%c[0;%dm%c\%c[0;0m",27,color,value,27);
+				//printf("%c[%d;%dm%c%c[%dm\n",27,0,color,value,27,0);
+			}else{
+				printf("[PANIC] Unrecognised token %x \n",opcode);
+                        	panic("CPU detected unrecognised token");
+			}
 		}else{
 			printf("[PANIC] Unrecognised token %x \n",opcode);
 			panic("CPU detected unrecognised token");
